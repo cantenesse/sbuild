@@ -21,9 +21,6 @@ def self.system_safe(cmd)
 
     stdout, stderr, status = Open3.capture3(cmd)
 
-    puts "STDOUT:\n#{stdout}"
-    puts "STDERR:\n#{stderr}"
-
     if not status.success?
         raise "Build failed"
     end
